@@ -1,4 +1,4 @@
-# ece309-fall18-unityid
+# ece309-fall18-jrfoss
 Repository for students to fork and modify. \
 Name:   Josh Foss \
 Class:  ECE 309 \
