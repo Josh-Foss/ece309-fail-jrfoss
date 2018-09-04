@@ -58,7 +58,7 @@ class List {
 };
 
 
-void List::push_back(Item) 
+void push_back(*char a) 
 {
 	ListNode *node = new ListNode(a);
 	if (head==NULL) { 
@@ -75,7 +75,7 @@ void List::push_back(Item)
 }
 
 
-Item List::get(int n)
+Item get(int n)
 {
 	int i;
 	Item ans;
@@ -89,7 +89,7 @@ Item List::get(int n)
 	return ans;
 }
 
-int List::length()
+int length()
 {
 	if (head==NULL) {
 		return 0;
@@ -102,7 +102,7 @@ int List::length()
 	return i;
 }
 
-bool List::remove_front() 
+Item remove_front() 
 {
     if (!empty()) // if list is not empty
     {
@@ -114,7 +114,7 @@ bool List::remove_front()
 		tail = NULL;
 		return true;
 	}
-		return false; // nothing in list
+		return copy; // nothing in list
 }
 
 //a destructor
@@ -122,8 +122,9 @@ List::~List()
 {
 	// Free all of the ListNodes in the list
 	Item t;
-	while(!empty()) // while not empty
-     remove(t);   // remove the next node
+	while(!empty()){ // while not empty
+     remove(t);	// remove the next node
+	}	 
 }
 
 //a constructor
