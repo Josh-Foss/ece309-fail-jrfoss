@@ -104,22 +104,13 @@ class List {
 	}
 
 	//a destructor
-	~List()
-	{
-		// Free all of the ListNodes in the list
-		Item t;
-		while(!empty()){ // while not empty
-		remove(t);	// remove the next node
-		}	 
-	}
-
-	//a constructor
-	List() 
-	{
-		// there’s nothing in the list
+	List () {
 		head = NULL;
 		tail = NULL;
 	}
+	
+	~List()
+	
 
 	// add head and tail pointer
 	ListNode *head;
