@@ -28,7 +28,11 @@ class List {
 		ListNode *head;
 		ListNode *tail;
 	public:
-		List();
+		List()
+		{
+			head = NULL;
+			tail = NULL;
+		}
 	
 		void push_back(Item a) 
 		{
