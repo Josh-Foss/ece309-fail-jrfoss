@@ -12,24 +12,24 @@ class Item {
 };
 
 class List {
-	private:
-		// add head and tail pointer
+	private:	
+		class ListNode {
+			private:
+			Item item; // data in the list
+			ListNode *next;	
+		
+			public:
+				ListNode(Item a) 
+				{ item = a; next=NULL; }
+				ListNode* getNext() { return next; }
+				void setNext(ListNode *n) { next = n; }
+				Item getItem() { return item; }
+		};	
 		ListNode *head;
 		ListNode *tail;
 	public:
 		List();
-	class ListNode {
-		
-		private:
-		Item item; // data in the list
-		ListNode *next;	
-		
-		public:
-		ListNode(Item a) 
-		{ item = a; next=NULL; }
-		ListNode* getNext() { return next; }
-		void setNext(ListNode *n) { next = n; }
-		Item getItem() { return item; }
+	
 		void push_back(Item a) 
 		{
 			ListNode *node = new ListNode(a);
@@ -88,7 +88,6 @@ class List {
 			}
 			return copy; // nothing in list
 		}
-};
 		void append(Item a);    
 		bool remove(Item &a);    
 		bool empty(); 
