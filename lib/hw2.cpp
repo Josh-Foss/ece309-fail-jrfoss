@@ -69,15 +69,16 @@ class List {
 				return 0;
 			}
 			int i = 1;
-			while (next != NULL) {
+			while (node->getNext() != NULL) {
 				i = i + 1;
-				next = node->next;
+				node = node->getNext();
 			}
 			return i;
 		}
 
 		Item remove_front() 
 		{
+			Item copy;
 			ListNode *node = head;
 			if (!empty()) // if list is not empty
 			{
@@ -87,9 +88,9 @@ class List {
 			head = tmp;  // update the head
 			if (tmp==NULL) // removed last element 
 				tail = NULL;
-			return true;
+			return copy;
 			}
-			return copy; // nothing in list
+			return NULL; // nothing in list
 		}
 		void append(Item a);    
 		bool remove(Item &a);    
