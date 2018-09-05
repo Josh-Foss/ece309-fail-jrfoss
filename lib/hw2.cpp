@@ -11,7 +11,7 @@ class Item {
 };
 
 class List {
-	private:
+	public:
 
 // ListNode represents each 
 // node of the list
