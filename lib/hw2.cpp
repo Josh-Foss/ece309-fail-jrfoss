@@ -49,6 +49,7 @@ class List {
 
 		Item get(int n)
 		{
+			ListNode *node = head;
 			int i;
 			Item ans;
 			for (i=0; i < n; i++) {
@@ -63,6 +64,7 @@ class List {
 
 		int length()
 		{
+			ListNode *node = head;
 			if (head==NULL) {
 				return 0;
 			}
@@ -76,6 +78,7 @@ class List {
 
 		Item remove_front() 
 		{
+			ListNode *node = head;
 			if (!empty()) // if list is not empty
 			{
 			copy = head->getItem(); // return copy
@@ -91,7 +94,7 @@ class List {
 		void append(Item a);    
 		bool remove(Item &a);    
 		bool empty(); 
-		~A();
+		~List();
 };
 
 
