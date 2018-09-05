@@ -94,7 +94,12 @@ class List {
 		void append(Item a);    
 		bool remove(Item &a);    
 		bool empty(); 
-		~List();
+		~List() {
+			Item t;
+  			while(!empty()) // while not empty
+     				remove(t);   // remove the next node
+		}
+
 };
 
 
