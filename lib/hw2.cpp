@@ -51,7 +51,7 @@ class List {
 		}
 
 
-		Item get(int n)
+		const char* get(int n)
 		{
 			ListNode *node = head;
 			int i;
@@ -63,7 +63,7 @@ class List {
 				}
 			}
 			ans = node->getItem();
-			return ans;
+			return ans.str;
 		}
 
 		int length()
