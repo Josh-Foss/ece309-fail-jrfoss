@@ -43,6 +43,83 @@ class List {
 			return item; 
 		}
 	};
+	
+	void push_back(char *a) 
+	{
+		ListNode *node = new ListNode(a);
+		if (head==NULL) { 
+			// list is empty, so set head and 
+			// tail to be node
+			head = node;
+			tail = node;
+		} 
+		else {
+			// put new node at end of list
+			tail->setNext(node);
+			tail = node;
+		}
+	}
+
+
+	Item get(int n)
+	{
+		int i;
+		Item ans;
+		for (i=0; i < n; i++) {
+			node = node->getNext();
+			if (node == NULL) {
+				return NULL;
+			}
+		}
+		ans = node->getItem();
+		return ans;
+	}
+
+	int length()
+	{
+		if (head==NULL) {
+			return 0;
+		}
+		int i = 1;
+		while (next != NULL) {
+			i = i + 1;
+			next = node->next;
+		}
+		return i;
+	}
+
+	Item remove_front() 
+	{
+		if (!empty()) // if list is not empty
+		{
+		copy = head->getItem(); // return copy
+		ListNode *tmp = head->getNext();
+		delete head; // delete the node
+		head = tmp;  // update the head
+		if (tmp==NULL) // removed last element 
+			tail = NULL;
+		return true;
+		}
+		return copy; // nothing in list
+	}
+
+	//a destructor
+	List::~List()
+	{
+		// Free all of the ListNodes in the list
+		Item t;
+		while(!empty()){ // while not empty
+		remove(t);	// remove the next node
+		}	 
+	}
+
+	//a constructor
+	List::List() 
+	{
+		// there’s nothing in the list
+		head = NULL;
+		tail = NULL;
+	}
 
 	// add head and tail pointer
 	ListNode *head;
@@ -52,18 +129,15 @@ class List {
   
 	public:
 	List();
-	void push_back(Item a);
-	Item get(int n);
-	int length();
-	Item remove_front();
+	void append(Item a);    
 	bool remove(Item &a);    
 	bool empty(); 
 };
 
 
-void List::push_back(Item a) 
+void List::push_back(char *a) 
 {
-	ListNode *node = new ListNode(a);
+	List::ListNode *node = new List::ListNode(a);
 	if (head==NULL) { 
 		// list is empty, so set head and 
 		// tail to be node
