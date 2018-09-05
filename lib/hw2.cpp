@@ -42,23 +42,8 @@ class List {
 		{ 
 			return item; 
 		}
-	};
-
-	// add head and tail pointer
-	ListNode *head;
-	ListNode *tail;
-	
-
-  
-	public:
-	List();
-	void append(Item a);    
-	bool remove(Item &a);    
-	bool empty(); 
-};
-
-
-void push_back(char* a) 
+		
+		void push_back(char *a) 
 {
 	List::ListNode *node = new List::ListNode(a);
 	if (head==NULL) { 
@@ -134,6 +119,23 @@ List::List()
    head = NULL;
    tail = NULL;
 }
+
+	};
+
+	// add head and tail pointer
+	ListNode *head;
+	ListNode *tail;
+	
+
+  
+	public:
+	List();
+	void append(Item a);    
+	bool remove(Item &a);    
+	bool empty(); 
+};
+
+
 
 int main()
 {
