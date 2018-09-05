@@ -104,7 +104,7 @@ class List {
 	}
 
 	//a destructor
-	List::~List()
+	~List()
 	{
 		// Free all of the ListNodes in the list
 		Item t;
@@ -114,7 +114,7 @@ class List {
 	}
 
 	//a constructor
-	List::List() 
+	List() 
 	{
 		// there’s nothing in the list
 		head = NULL;
