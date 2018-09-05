@@ -60,7 +60,7 @@ class List {
 
 void push_back(char* a) 
 {
-	ListNode *node = new ListNode(a);
+	List::ListNode *node = new List::ListNode(a);
 	if (head==NULL) { 
 		// list is empty, so set head and 
 		// tail to be node
