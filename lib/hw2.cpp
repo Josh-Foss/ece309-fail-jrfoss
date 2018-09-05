@@ -137,3 +137,25 @@ bool List::empty()
 }
 
 
+int main()
+{
+	List a;
+	int i = a.length()
+	a.append(Item("Fraser"));
+	a.append(Item("Lucas"));
+	a.append(Item("Silva"));
+	a.append(Item("Mkhi"));
+	a.append(Item("Townsend"));
+	a.push_back(Item("Sessegnon"));
+	
+	printf("Length = %d", i);
+	while(!a.empty())
+    {
+		Item copy;
+		a.remove(copy);
+
+		printf("Next thing removed: %s\n",copy.str);
+    }
+
+	return 0;
+}
