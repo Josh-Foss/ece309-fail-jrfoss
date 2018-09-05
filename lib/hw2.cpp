@@ -18,16 +18,13 @@ class List {
 		ListNode *tail;
 	public:
 		List();
-		void append(Item a);    
-		bool remove(Item &a);    
-		bool empty(); 
-};
-
-class ListNode {
-	private:
+	class ListNode {
+		
+		private:
 		Item item; // data in the list
 		ListNode *next;	
-	public:
+		
+		public:
 		ListNode(Item a) 
 		{ item = a; next=NULL; }
 		ListNode* getNext() { return next; }
@@ -91,25 +88,14 @@ class ListNode {
 			}
 			return copy; // nothing in list
 		}
-
-		//a destructor
-		~List()
-		{
-			// Free all of the ListNodes in the list
-			Item t;
-			while(!empty()){ // while not empty
-				remove(t);	// remove the next node
-			}	 
-		}
-
-		//a constructor
-		List() 
-		{
-			// there’s nothing in the list
-			head = NULL;
-			tail = NULL;
-		}
 };
+		void append(Item a);    
+		bool remove(Item &a);    
+		bool empty(); 
+		~A();
+};
+
+
 
 
 void List::append(Item a)
