@@ -79,7 +79,6 @@ class List {
 		Item remove_front() 
 		{
 			Item copy;
-			ListNode *node = head;
 			if (!empty()) // if list is not empty
 			{
 			copy = head->getItem(); // return copy
