@@ -58,7 +58,7 @@ class List {
 };
 
 
-void push_back(*char a) 
+void push_back(char* a) 
 {
 	ListNode *node = new ListNode(a);
 	if (head==NULL) { 
