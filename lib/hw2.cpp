@@ -11,6 +11,17 @@ class Item {
 	}
 };
 
+class List {
+	private:
+		// add head and tail pointer
+		ListNode *head;
+		ListNode *tail;
+	public:
+		List();
+		void append(Item a);    
+		bool remove(Item &a);    
+		bool empty(); 
+};
 
 class ListNode {
 	private:
@@ -138,14 +149,3 @@ bool List::empty()
 }
 
 
-class List {
-	private:
-		// add head and tail pointer
-		ListNode *head;
-		ListNode *tail;
-	public:
-		List();
-		void append(Item a);    
-		bool remove(Item &a);    
-		bool empty(); 
-};
