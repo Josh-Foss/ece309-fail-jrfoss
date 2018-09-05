@@ -52,15 +52,18 @@ class List {
   
 	public:
 	List();
-	void append(Item a);    
+	void push_back(Item a);
+	Item get(int n);
+	int length();
+	Item remove_front();
 	bool remove(Item &a);    
 	bool empty(); 
 };
 
 
-void List::push_back(char *a) 
+void List::push_back(Item a) 
 {
-	List::ListNode *node = new List::ListNode(a);
+	ListNode *node = new ListNode(a);
 	if (head==NULL) { 
 		// list is empty, so set head and 
 		// tail to be node
