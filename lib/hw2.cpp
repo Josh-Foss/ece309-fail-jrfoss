@@ -44,6 +44,10 @@ class List {
 		}
 	};
 	
+	// add head and tail pointer
+	ListNode *head;
+	ListNode *tail;
+	
 	void push_back(char *a) 
 	{
 		ListNode *node = new ListNode(a);
@@ -103,18 +107,16 @@ class List {
 		return copy; // nothing in list
 	}
 
-	//a destructor
+	
 	List () {
 		head = NULL;
 		tail = NULL;
-	}
-	
-	~List()
+	};
+	//a destructor
+	~List();
 	
 
-	// add head and tail pointer
-	ListNode *head;
-	ListNode *tail;
+	
 	
 
   
@@ -125,65 +127,42 @@ class List {
 	bool empty(); 
 };
 
-
-void List::push_back(char *a) 
+void List::append(Item a)
 {
-	List::ListNode *node = new List::ListNode(a);
-	if (head==NULL) { 
-		// list is empty, so set head and 
-		// tail to be node
-		head = node;
-		tail = node;
-		} 
-	else {
-		// put new node at end of list
-		tail->setNext(node);
-		tail = node;
-	}
-}
-
-
-Item List::get(int n)
-{
-	int i;
-	Item ans;
-	for (i=0; i < n; i++) {
-		node = node->getNext();
-		if (node == NULL) {
-			return NULL;
-		}
-	}
-	ans = node->getItem();
-	return ans;
-}
-
-int list::length()
-{
-	if (head==NULL) {
-		return 0;
-	}
-	int i = 1;
-	while (next != NULL) {
-		i = i + 1;
-		next = node->next;
-	}
-	return i;
-}
-
-Item List::remove_front() 
-{
-    if (!empty()) // if list is not empty
+  ListNode *node = new ListNode(a);
+  if (head == NULL)
     {
-		copy = head->getItem(); // return copy
-		ListNode *tmp = head->getNext();
-		delete head; // delete the node
-		head = tmp;  // update the head
-		if (tmp==NULL) // removed last element 
-		tail = NULL;
-		return true;
-	}
-		return copy; // nothing in list
+      // list is empty
+      head = node;
+      tail = node;
+    }
+  else 
+    {
+      tail->setNext(node);
+      tail = node;
+    }
 }
+
+bool List::remove(Item &copy) 
+{
+  if (!empty()) // if list is not empty
+    {
+      copy = head->getItem(); // return copy
+      ListNode *tmp = head->getNext();
+      delete head; // delete the node
+      head = tmp;  // update the head
+      if (tmp==NULL) // removed last element 
+	tail = NULL;
+      return true;
+    }
+  return false; // nothing in list
+}
+
+bool List::empty()
+{
+  return head==NULL;
+}
+
 
 int main()
 {
