@@ -42,8 +42,23 @@ class List {
 		{ 
 			return item; 
 		}
-		
-		void push_back(char *a) 
+	};
+
+	// add head and tail pointer
+	ListNode *head;
+	ListNode *tail;
+	
+
+  
+	public:
+	List();
+	void append(Item a);    
+	bool remove(Item &a);    
+	bool empty(); 
+};
+
+
+void List::push_back(char *a) 
 {
 	List::ListNode *node = new List::ListNode(a);
 	if (head==NULL) { 
@@ -60,7 +75,7 @@ class List {
 }
 
 
-Item get(int n)
+Item List::get(int n)
 {
 	int i;
 	Item ans;
@@ -74,7 +89,7 @@ Item get(int n)
 	return ans;
 }
 
-int length()
+int list::length()
 {
 	if (head==NULL) {
 		return 0;
@@ -87,7 +102,7 @@ int length()
 	return i;
 }
 
-Item remove_front() 
+Item List::remove_front() 
 {
     if (!empty()) // if list is not empty
     {
@@ -119,23 +134,6 @@ List::List()
    head = NULL;
    tail = NULL;
 }
-
-	};
-
-	// add head and tail pointer
-	ListNode *head;
-	ListNode *tail;
-	
-
-  
-	public:
-	List();
-	void append(Item a);    
-	bool remove(Item &a);    
-	bool empty(); 
-};
-
-
 
 int main()
 {
