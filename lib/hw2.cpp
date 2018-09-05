@@ -185,24 +185,6 @@ Item List::remove_front()
 		return copy; // nothing in list
 }
 
-//a destructor
-List::~List()
-{
-	// Free all of the ListNodes in the list
-	Item t;
-	while(!empty()){ // while not empty
-     remove(t);	// remove the next node
-	}	 
-}
-
-//a constructor
-List::List() 
-{
-   // there’s nothing in the list
-   head = NULL;
-   tail = NULL;
-}
-
 int main()
 {
 	List a;
