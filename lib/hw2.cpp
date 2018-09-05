@@ -140,7 +140,7 @@ bool List::empty()
 int main()
 {
 	List a;
-	int i = a.length()
+	int i = a.length();
 	a.append(Item("Fraser"));
 	a.append(Item("Lucas"));
 	a.append(Item("Silva"));
